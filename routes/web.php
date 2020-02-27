@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes([ 'register' => false ]);
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/bla', function () {
+     return view('admin.dashboard');
+//    echo 'Yis';
+});
