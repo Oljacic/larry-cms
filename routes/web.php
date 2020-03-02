@@ -17,9 +17,14 @@ Route::get('/', function () {
 
 Auth::routes([ 'register' => false ]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::prefix('admin')
+    ->middleware(array('auth'))
+    ->namespace('Admin')
+    ->group(function (){
 
-Route::get('/bla', function () {
-     return view('admin.dashboard');
-//    echo 'Yis';
+        // Admin Dashboard
+        Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+
+        // Pages
+        // Products
 });
