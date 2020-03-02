@@ -7,8 +7,7 @@
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown no-arrow">
-            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="{{ url('/') }}">
                 <i class="fas fa-home fa-sm fa-fw mr-2 text-purple"></i>
                 <span class="mr-2 d-none d-lg-inline">Frontend</span>
             </a>
@@ -16,11 +15,13 @@
         <div class="topbar-divider d-none d-sm-block"></div>
         <!-- Nav Item - User Information -->
         <li class="nav-item dropdown no-arrow">
-            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-purple"></i>
-                <span class="mr-2 d-none d-lg-inline">Logout</span>
+                <span class="mr-2 d-none d-lg-inline">{{ __('Logout') }}</span>
             </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
         </li>
     </ul>
 </nav>
