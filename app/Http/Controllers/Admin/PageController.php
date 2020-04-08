@@ -12,8 +12,7 @@ class PageController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct() {
         // $this->middleware('auth');
     }
 
@@ -22,7 +21,7 @@ class PageController extends Controller
     }
 
     public function create() {
-        echo "create";
+        return view('admin.page.create');
     }
 
     public function edit() {

@@ -23,8 +23,10 @@ Route::prefix('admin')
     ->group(function (){
 
         // Admin Dashboard
-        Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+        Route::get('dashboard', 'DashboardController@index')->name('admin.dashboard');
 
         // Pages
+        Route::get('page/create', 'PageController@create')->name('admin.page.create');
+
         // Products
 });
